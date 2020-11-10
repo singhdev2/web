@@ -2,7 +2,7 @@
 $(aws ecr get-login --no-include-email --region us-east-1)
 
 // build the docker image
-docker build -t web:latest .
+docker build -t web2:latest .
 
 // tag the docker image
 docker tag <IMAGE_NAME> <ECR_URL>/web:latest
