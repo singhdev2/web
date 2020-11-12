@@ -6,11 +6,11 @@ phases:
       - $(aws ecr get-login --no-include-email --region us-east-1)
   build:
     commands:
-      - docker build -t youtube:latest .
-      - docker tag youtube:latest 961515533175.dkr.ecr.us-east-1.amazonaws.com/youtube:latest
+      - docker build -t blogs:latest .
+      - docker tag blogs:latest 961515533175.dkr.ecr.us-east-1.amazonaws.com/blogs:latest
   post_build:
     commands:
-      - docker push 961515533175.dkr.ecr.us-east-1.amazonaws.com/youtube:latest
-      - printf '[{"name":"helloWorld","imageUri":"%s"}]' 961515533175.dkr.ecr.us-east-1.amazonaws.com/youtube:latest > imagedefinitions.json
+      - docker push 961515533175.dkr.ecr.us-east-1.amazonaws.com/blogs:latest
+      - printf '[{"name":"octblogs","imageUri":"%s"}]' 961515533175.dkr.ecr.us-east-1.amazonaws.com/blogs:latest > imagedefinitions2.json
 artifacts:
-  files: imagedefinitions.json
+  files: imagedefinitions2.json
